@@ -21,28 +21,28 @@ def farness_centrality(G):
     return farness_centrality
 
 
-degree_centrality = nx.degree_centrality(G)
-betweenness_centrality = nx.betweenness_centrality(G)
-closeness_centrality = nx.closeness_centrality(G)
-farness_centralityVar = farness_centrality(G)
-eigenvector_centrality = nx.eigenvector_centrality_numpy(G)
-katz_centrality = nx.katz_centrality(G)
+print("_______________________________________________________________________")
+print("centralidad del grafo")
+centralidad = nx.degree_centrality(G)
+print(centralidad)
+
+##intermediacion
+print("_________________________________________________________________________")
+print("intermediacion")
+intermediacion = nx.betweenness_centrality(G)
+print(intermediacion)
 
 
+##cercania
+print("_________________________________________________________________________")
+print("cercania")
+cercania = nx.closeness_centrality(G)
+print(cercania)
 
-
-
-
-degree_centrality.to_Exel('degree_centrality.xlsx')
-betweenness_centrality.to_Exel('betweenness_centrality.xlsx')
-closeness_centrality.to_Exel('closeness_centrality.xlsx')
-farness_centralityVar.to_Exel('farness_centralityVar.xlsx')
-eigenvector_centrality.to_Exel('eigenvector_centrality.xlsx')
-katz_centrality.to_Exel('katz_centrality.xlsx')
-
-
-
-
+print("_________________________________________________________________________")
+print("matriz de adyacencia")
+matriz = nx.adjacency_matrix(G)
+print(matriz.todense())
 
 
 nx.draw(G)
